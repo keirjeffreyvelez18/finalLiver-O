@@ -116,12 +116,11 @@
                         <li class="<?php if($this->uri->segment(2)=='users'){echo 'active';}?>">
                             <a href = "<?php echo site_url('home/users')?>">Users</a>
                         </li>
-<<<<<<< HEAD
+
                         <li class="<?php if($this->uri->segment(2)=='userslog'){echo 'active';}?>">
                             <a href = "<?php echo site_url('home/userslog')?>" >Users Log</a>
                         </li>
-=======
->>>>>>> d212bdc788bf648ad286af714676455b0b454b3d
+
                     <?php else: ?>
                         <li>
                             <a onclick="return false;" >Results</a>
@@ -146,10 +145,7 @@
             <?php if ($this->session->userdata('isLoggedIn')): ?>
                 <li class="<?php if($this->uri->segment(2)=='profile'){echo 'active';} ?>">
                     <a href="<?php echo base_url('index.php/home/profile') ?>">
-<<<<<<< HEAD
-=======
-                       
->>>>>>> d212bdc788bf648ad286af714676455b0b454b3d
+
                         <?php echo $this->session->userdata('username') ?>
                     </a> <!-- This is where the system uses calls the name of the user logged in -->
                 </li>
