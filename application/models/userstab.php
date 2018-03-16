@@ -6,6 +6,8 @@
             $this->load->library('encrypt');
     	}
 
+        
+
     	function users(){
     		$this->db->select('*');
             $this->db->from('users');
@@ -67,6 +69,21 @@
             return $query;
         }
 
+        function getLog(){
+            $this->db->select('*');
+            $this->db->from('log');
+            $this->db->join('users', 'log.userid=users.userid');
+            $query = $this->db->get();
+            return $query->result();
+        }
+
+        function insert_logout(){
+            $this->db->set('datetimelogout',  Date('Y-m-d h:i:sa'));
+            $this->db->where('userid', $this->session->userdata('userid'));
+            $this->db->where('datetimelogin', $this->session->userdata('datetimelogin'));
+            $this->db->update('log'); 
+        }
+
         function login_user($email, $password){
 
             $this->db->select('*');
@@ -77,6 +94,14 @@
             if($query->num_rows()==1){
                 $row= $query->row();
                 if ($this->encrypt->decode($row->password)==$password) {
+
+                    $log = array(
+                        'datetimelogin' => Date('Y-m-d h:i:sa'),
+                        'userid'=>$row->userid,
+                    );
+                    $this->session->set_userdata('datetimelogin', $log['datetimelogin']);
+                    $query1 = $this->db->insert('log', $log);
+
                     $data=array(
                         'userid'=>$row->userid,
                         'username'=>$row->username,

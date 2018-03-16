@@ -120,12 +120,12 @@
 								<tr>
 									<td>
 										<div class="pull-right">
-											<input type="submit" name="submit" class="btn btn-primary" value="Back" 
-												<?php if($index==1){echo "disabled";} ?>
-											>
+											
 											<?php if ($index==18): ?>
 												<input onclick="alert('Saved');" type="submit" name="submit" class="btn btn-primary" value="Save">
 											<?php else: ?>
+												<input type="submit" name="submit" class="btn btn-primary" value="Back" 
+												<?php if($index==1){echo "disabled";} ?>>
 												<input type="submit" name="submit" class="btn btn-primary" value="Next" autofocus="">
 											<?php endif ?>
 										</div>

@@ -79,6 +79,10 @@ class Home extends CI_Controller {
 		}
 	}
 
+	public function userslog(){
+		$log['log'] = $this->userstab->getLog();
+		$this->load->view('User/userlog_view', $log);
+	}
 
     // public function sendEmail(){
     //   	$config = Array(
@@ -171,6 +175,7 @@ class Home extends CI_Controller {
 	}
 
 	public function logout(){
+		$this->userstab->insert_logout();
 		$this->session->sess_destroy();
 		$this->session->set_flashdata('logout','Successfully Logout');
 		redirect('/home/');

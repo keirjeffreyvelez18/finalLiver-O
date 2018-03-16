@@ -33,59 +33,54 @@
  * By default development will show errors but testing and live will hide them.
  */
 
-// if (defined('ENVIRONMENT'))
-// {
-//     switch (ENVIRONMENT)
-//     {
-//         case 'development':
-//             // Report all errors
-//             error_reporting(E_ALL);
-
-<<<<<<< HEAD
-//             // Display errors in output
-//             ini_set('display_errors', 1);
-=======
-//             // Display errors in output\
->>>>>>> 28286af0307fa6f7d25c00e81760d2e53f117c39
-//         break;
-
-//         case 'testing':
-//         case 'production':
-//             // Report all errors except E_NOTICE
-//             // This is the default value set in php.ini
-//             error_reporting(E_ALL ^ E_NOTICE);
-
-//             // Don't display errors (they can still be logged)
-//             ini_set('display_errors', 1);
-//         break;
-
-//         default:
-//             exit('The application environment is not set correctly.');
-//     }
-// }
-
 if (defined('ENVIRONMENT'))
 {
-	switch (ENVIRONMENT)
-	{
-		case 'development':
-			error_reporting(E_ALL);
-		break;
+    switch (ENVIRONMENT)
+    {
+        case 'development':
+            // Report all errors
+            error_reporting(E_ALL);
 
-		case 'testing':
-		case 'production':
-			error_reporting(0);
-		break;
 
-		default:
-			exit('The application environment is not set correctly.');
-	}
+            // Display errors in output
+            ini_set('display_errors', 1);
+            // Display errors in output\
+
+        break;
+
+        case 'testing':
+        case 'production':
+            // Report all errors except E_NOTICE
+            // This is the default value set in php.ini
+            error_reporting(E_ALL ^ E_NOTICE);
+
+            // Don't display errors (they can still be logged)
+            ini_set('display_errors', 1);
+        break;
+
+        default:
+            exit('The application environment is not set correctly.');
+    }
 }
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> 28286af0307fa6f7d25c00e81760d2e53f117c39
+// if (defined('ENVIRONMENT'))
+// {
+// 	switch (ENVIRONMENT)
+// 	{
+// 		case 'development':
+// 			error_reporting(E_ALL);
+// 		break;
+
+// 		case 'testing':
+// 		case 'production':
+// 			error_reporting(0);
+// 		break;
+
+// 		default:
+// 			exit('The application environment is not set correctly.');
+// 	}
+// }
+
 /*
  *---------------------------------------------------------------
  * SYSTEM FOLDER NAME
