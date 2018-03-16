@@ -33,6 +33,39 @@
  * By default development will show errors but testing and live will hide them.
  */
 
+<<<<<<< HEAD
+=======
+// if (defined('ENVIRONMENT'))
+// {
+//     switch (ENVIRONMENT)
+//     {
+//         case 'development':
+//             // Report all errors
+//             error_reporting(E_ALL);
+
+
+//             // Display errors in output
+//             ini_set('display_errors', 1);
+//             // Display errors in output\
+
+//         break;
+
+//         case 'testing':
+//         case 'production':
+//             // Report all errors except E_NOTICE
+//             // This is the default value set in php.ini
+//             error_reporting(E_ALL ^ E_NOTICE);
+
+//             // Don't display errors (they can still be logged)
+//             ini_set('display_errors', 1);
+//         break;
+
+//         default:
+//             exit('The application environment is not set correctly.');
+//     }
+// }
+
+>>>>>>> d212bdc788bf648ad286af714676455b0b454b3d
 if (defined('ENVIRONMENT'))
 {
     switch (ENVIRONMENT)
@@ -63,6 +96,7 @@ if (defined('ENVIRONMENT'))
     }
 }
 
+<<<<<<< HEAD
 // if (defined('ENVIRONMENT'))
 // {
 // 	switch (ENVIRONMENT)
@@ -81,6 +115,8 @@ if (defined('ENVIRONMENT'))
 // 	}
 // }
 
+=======
+>>>>>>> d212bdc788bf648ad286af714676455b0b454b3d
 /*
  *---------------------------------------------------------------
  * SYSTEM FOLDER NAME
